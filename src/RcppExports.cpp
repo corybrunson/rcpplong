@@ -29,10 +29,34 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// accumulate_long
+long int accumulate_long(long int n);
+RcppExport SEXP _rcpplong_accumulate_long(SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< long int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(accumulate_long(n));
+    return rcpp_result_gen;
+END_RCPP
+}
+// accumulate_mat
+NumericMatrix accumulate_mat(long int n);
+RcppExport SEXP _rcpplong_accumulate_mat(SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< long int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(accumulate_mat(n));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_rcpplong_choose_int", (DL_FUNC) &_rcpplong_choose_int, 2},
     {"_rcpplong_choose_long", (DL_FUNC) &_rcpplong_choose_long, 2},
+    {"_rcpplong_accumulate_long", (DL_FUNC) &_rcpplong_accumulate_long, 1},
+    {"_rcpplong_accumulate_mat", (DL_FUNC) &_rcpplong_accumulate_mat, 1},
     {NULL, NULL, 0}
 };
 

@@ -4,7 +4,7 @@ using namespace Rcpp;
 
 // https://stackoverflow.com/a/9331125
 
-//' @rdname choose
+//' @rdname choose_rcpp
 // [[Rcpp::export]]
 int choose_int(int n, int k) {
   
@@ -21,7 +21,7 @@ int choose_int(int n, int k) {
   return res;
 }
 
-//' @rdname choose
+//' @rdname choose_rcpp
 // [[Rcpp::export]]
 long int choose_long(int n, int k) {
   
@@ -35,5 +35,31 @@ long int choose_long(int n, int k) {
     res /= i;
   }
   
+  return res;
+}
+
+//' @rdname accumulate_rcpp
+// [[Rcpp::export]]
+long int accumulate_long(long int n) {
+  
+  long int res = 0;
+  
+  for (long int i = 0; i < n; i++) {
+    res += 1;
+  }
+
+  return res;
+}
+
+//' @rdname accumulate_rcpp
+// [[Rcpp::export]]
+NumericMatrix accumulate_mat(long int n) {
+  
+  NumericMatrix res(2, 2);
+  
+  for (long int i = 0; i < n; i++) {
+    res(0, 0) += 1;
+  }
+
   return res;
 }

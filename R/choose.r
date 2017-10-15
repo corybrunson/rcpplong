@@ -2,7 +2,7 @@
 #' 
 #' @description Filler description.
 #' 
-#' @name choose
+#' @name choose_rcpp
 #' @param n number of objects
 #' @param k size of subset
 #' @examples
