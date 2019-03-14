@@ -1,7 +1,7 @@
-#' @title Accumulating \code{long int}s using \strong{Rcpp}
-#' 
+#' @title Accumulating `long int`s using **Rcpp**
+#'
 #' @description Filler description.
-#' 
+#'
 #' @name accumulate_rcpp
 #' @param n number of objects
 #' @examples
@@ -14,3 +14,4 @@
 #' test <- accumulate_mat(m)
 #' print(test)
 #' mode(test)
+NULL
